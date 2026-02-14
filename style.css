@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #ff6f91, #ff9671);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+/* ---------------- Buttons ---------------- */
+
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 120px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: red;
+    color: white;
+}
+
+#noBtn {
+    background: black;
+    color: white;
+    position: absolute;
+    transition: 0.2s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------------- Slideshow ---------------- */
+
+.slideshow {
+    margin: 30px auto;
+    position: relative;
+    max-width: 500px;
+}
+
+.slide {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 40px rgba(255, 20, 147, 0.4),
+        0 0 60px rgba(255, 105, 180, 0.3);
+
+    transition: opacity 1.5s ease-in-out,
+                transform 4s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    animation: zoomEffect 6s ease-in-out infinite alternate;
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+.slideshow::before,
+.slideshow::after {
+    content: "💖 💕 💘 💞 💓";
+    position: absolute;
+    font-size: 24px;
+    animation: floatHearts 4s ease-in-out infinite alternate;
+}
+
+.slideshow::before { top: -30px; }
+.slideshow::after { bottom: -30px; }
+
+@keyframes floatHearts {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-15px); }
+}
+
+/* ---------------- Game ---------------- */
+
+.game-btn {
+    background: purple;
+    color: white;
+}
+
+#pianoGame {
+    width: 300px;
+    height: 500px;
+    margin: 20px auto;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.row {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+}
+
+.tile {
+    width: 25%;
+    height: 100px;
+    position: absolute;
+    background: black;
+    cursor: pointer;
+}
+
+.heart-tile {
+    background: pink;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
